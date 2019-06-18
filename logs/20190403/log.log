@@ -1,0 +1,8 @@
+[INFO ] 2019-04-03 18:27:54,681 com.yitu2.demo.DemoApplication - Starting DemoApplication on localhost with PID 16688 (D:\nan\maven\demo\target\classes started by Administrator in D:\nan\maven\demo)
+[DEBUG] 2019-04-03 18:27:54,690 com.yitu2.demo.DemoApplication - Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+[INFO ] 2019-04-03 18:27:54,691 com.yitu2.demo.DemoApplication - No active profile set, falling back to default profiles: default
+[INFO ] 2019-04-03 18:27:57,357 com.yitu2.demo.DemoApplication - Started DemoApplication in 3.327 seconds (JVM running for 4.264)
+[DEBUG] 2019-04-03 18:27:58,126 com.yitu2.demo.dao.MainDao.listHomepageAD - ==>  Preparing: SELECT id,photo,link FROM `homepage_ad` order by `homepage_ad`.order 
+[DEBUG] 2019-04-03 18:27:58,150 com.yitu2.demo.dao.MainDao.listHomepageAD - ==> Parameters: 
+[DEBUG] 2019-04-03 18:27:58,175 com.yitu2.demo.dao.MainDao.listHomepageAD - <==      Total: 3
+[INFO ] 2019-04-03 18:27:58,176 com.yitu2.demo.controller.MainController - listHomepageAD

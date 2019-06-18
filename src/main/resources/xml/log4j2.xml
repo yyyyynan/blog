@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--日志级别以及优先级排序: OFF > FATAL > ERROR > WARN > INFO > DEBUG > TRACE > ALL -->
+<!--Configuration后面的status，这个用于设置log4j2自身内部的信息输出，可以不设置，当设置成trace时，你会看到log4j2内部各种详细输出-->
+<!--monitorInterval：Log4j能够自动检测修改配置 文件和重新配置本身，设置间隔秒数-->
+<Configuration status="WARN" monitorInterval="30">
+    <!--全局属性-->
+    <Properties>
+        <!--<Property name="APP_NAME">luis-log4j2</Property>-->
+        <Property name="DATE">${date:yyyyMMdd}</Property>
+        <Property name="LOG_FILE_PATH">logs/${DATE}/</Property>
+        <Property name="PATTERN_FORMAT">[%-5p] %d %c - %m%n</Property>
+    </Properties>
+
+    <Appenders>
+        <!--输出到控制台-->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="${PATTERN_FORMAT}"/>
+        </Console>
+
+        <RollingFile name="LogFile" fileName="${LOG_FILE_PATH}/log.log"
+                     filePattern="${LOG_FILE_PATH}/log-%d{yyyyMMdd}-%i.log.gz">
+            <!--控制台只输出level及以上级别的信息（onMatch），其他的直接拒绝（onMismatch）-->
+            <Filters>
+                <ThresholdFilter level="error" onMatch="ACCEPT" onMismatch="DENY"/>
+            </Filters>
+
+            <PatternLayout>
+                <pattern>${PATTERN_FORMAT}</pattern>
+            </PatternLayout>
+
+            <Policies>
+                <!-- rollover on startup, daily and when the file reaches 10 MegaBytes -->
+                <OnStartupTriggeringPolicy/>
+                <SizeBasedTriggeringPolicy size="100 MB"/>
+                <TimeBasedTriggeringPolicy/>
+            </Policies>
+            <DefaultRolloverStrategy>
+                <Delete basePath="test-log" maxDepth="1">
+                    <IfFileName glob="test*.log.gz" />
+                    <!--删除15天前的文件-->
+                    <IfLastModified age="15d" />
+                </Delete>
+            </DefaultRolloverStrategy>
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+
+        <!--过滤掉spring和mybatis的一些无用的DEBUG信息-->
+        <Logger name="org.springframework" level="INFO"/>
+        <Logger name="org.mybatis" level="INFO"/>
+
+         <!--LOG "com.luis*" at TRACE level -->
+        <Logger name="com.yitu2.demo" level="debug">
+            <AppenderRef ref="LogFile"/>
+        </Logger>
+
+
+         LOG everything at INFO level
+        <Root level="ALL">
+            <AppenderRef ref="Console"/>
+        </Root>
+    </Loggers>
+
+</Configuration>
+
+        <!--注意:按日志级别输出到不同的文件,需要使用Filters,并且先拒绝不符合的,在接受符合的顺序;-->

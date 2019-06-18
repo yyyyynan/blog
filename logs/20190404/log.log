@@ -1,0 +1,31 @@
+[INFO ] 2019-04-04 17:54:04,543 com.yitu2.demo.DemoApplication - Starting DemoApplication on localhost with PID 10192 (D:\nan\maven\demo\target\classes started by Administrator in D:\nan\maven\demo)
+[DEBUG] 2019-04-04 17:54:04,551 com.yitu2.demo.DemoApplication - Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+[INFO ] 2019-04-04 17:54:04,552 com.yitu2.demo.DemoApplication - No active profile set, falling back to default profiles: default
+[INFO ] 2019-04-04 17:54:06,883 com.yitu2.demo.DemoApplication - Started DemoApplication in 3.121 seconds (JVM running for 4.149)
+[INFO ] 2019-04-04 17:54:07,433 com.yitu2.demo.aop.GlobalLogInfo - URL : http://localhost:8082/listHomepageAD
+[INFO ] 2019-04-04 17:54:07,434 com.yitu2.demo.aop.GlobalLogInfo - HTTP_METHOD : GET
+[INFO ] 2019-04-04 17:54:07,437 com.yitu2.demo.aop.GlobalLogInfo - IP : 0:0:0:0:0:0:0:1
+[INFO ] 2019-04-04 17:54:07,440 com.yitu2.demo.aop.GlobalLogInfo - CLASS_METHOD : com.yitu2.demo.controller.MainController.listHomepageAD
+[INFO ] 2019-04-04 17:54:07,440 com.yitu2.demo.aop.GlobalLogInfo - ARGS : []
+[DEBUG] 2019-04-04 17:54:07,601 com.yitu2.demo.dao.MainDao.listHomepageAD - ==>  Preparing: SELECT id,photo,link FROM `homepage_ad` order by `homepage_ad`.order limit 0,9 
+[DEBUG] 2019-04-04 17:54:07,619 com.yitu2.demo.dao.MainDao.listHomepageAD - ==> Parameters: 
+[DEBUG] 2019-04-04 17:54:07,645 com.yitu2.demo.dao.MainDao.listHomepageAD - <==      Total: 3
+[INFO ] 2019-04-04 17:54:07,648 com.yitu2.demo.controller.MainController - listHomepageAD
+[INFO ] 2019-04-04 17:54:07,767 com.yitu2.demo.aop.GlobalLogInfo - URL : http://localhost:8082/listHomepageActivity
+[INFO ] 2019-04-04 17:54:07,767 com.yitu2.demo.aop.GlobalLogInfo - HTTP_METHOD : GET
+[INFO ] 2019-04-04 17:54:07,767 com.yitu2.demo.aop.GlobalLogInfo - IP : 0:0:0:0:0:0:0:1
+[INFO ] 2019-04-04 17:54:07,767 com.yitu2.demo.aop.GlobalLogInfo - CLASS_METHOD : com.yitu2.demo.controller.MainController.listHomepageActivity
+[INFO ] 2019-04-04 17:54:07,767 com.yitu2.demo.aop.GlobalLogInfo - ARGS : []
+[DEBUG] 2019-04-04 17:54:07,768 com.yitu2.demo.dao.MainDao.listHomepageActivity - ==>  Preparing: SELECT id,title,img,link FROM `homepage_activity` LIMIT 0,1 
+[DEBUG] 2019-04-04 17:54:07,768 com.yitu2.demo.dao.MainDao.listHomepageActivity - ==> Parameters: 
+[DEBUG] 2019-04-04 17:54:07,771 com.yitu2.demo.dao.MainDao.listHomepageActivity - <==      Total: 1
+[INFO ] 2019-04-04 17:54:07,771 com.yitu2.demo.controller.MainController - listHomepageActivity
+[INFO ] 2019-04-04 17:54:07,780 com.yitu2.demo.aop.GlobalLogInfo - URL : http://localhost:8082/listHomepageRaiders
+[INFO ] 2019-04-04 17:54:07,780 com.yitu2.demo.aop.GlobalLogInfo - HTTP_METHOD : GET
+[INFO ] 2019-04-04 17:54:07,781 com.yitu2.demo.aop.GlobalLogInfo - IP : 0:0:0:0:0:0:0:1
+[INFO ] 2019-04-04 17:54:07,781 com.yitu2.demo.aop.GlobalLogInfo - CLASS_METHOD : com.yitu2.demo.controller.MainController.listHomepageRaiders
+[INFO ] 2019-04-04 17:54:07,781 com.yitu2.demo.aop.GlobalLogInfo - ARGS : []
+[DEBUG] 2019-04-04 17:54:07,781 com.yitu2.demo.dao.MainDao.listHomepageRaiders - ==>  Preparing: select id,addr,title,link from `homepage_raiders` LIMIT 0,8 
+[DEBUG] 2019-04-04 17:54:07,781 com.yitu2.demo.dao.MainDao.listHomepageRaiders - ==> Parameters: 
+[DEBUG] 2019-04-04 17:54:07,783 com.yitu2.demo.dao.MainDao.listHomepageRaiders - <==      Total: 7
+[INFO ] 2019-04-04 17:54:07,784 com.yitu2.demo.controller.MainController - listHomepageRaiders

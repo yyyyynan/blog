@@ -1,0 +1,44 @@
+[INFO ] 2019-04-08 17:56:20,917 com.yitu2.demo.DemoApplication - Starting DemoApplication on localhost with PID 5984 (D:\nan\maven\demo\target\classes started by Administrator in D:\nan\maven\demo)
+[DEBUG] 2019-04-08 17:56:20,931 com.yitu2.demo.DemoApplication - Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+[INFO ] 2019-04-08 17:56:20,932 com.yitu2.demo.DemoApplication - No active profile set, falling back to default profiles: default
+[INFO ] 2019-04-08 17:56:25,753 com.yitu2.demo.DemoApplication - Started DemoApplication in 5.671 seconds (JVM running for 7.096)
+[INFO ] 2019-04-08 17:56:31,847 com.yitu2.demo.aop.GlobalLogInfo - URL : http://localhost:8082/logincheck
+[INFO ] 2019-04-08 17:56:31,848 com.yitu2.demo.aop.GlobalLogInfo - HTTP_METHOD : GET
+[INFO ] 2019-04-08 17:56:31,848 com.yitu2.demo.aop.GlobalLogInfo - IP : 0:0:0:0:0:0:0:1
+[INFO ] 2019-04-08 17:56:31,850 com.yitu2.demo.aop.GlobalLogInfo - CLASS_METHOD : com.yitu2.demo.controller.MainController.logincheck
+[INFO ] 2019-04-08 17:56:31,850 com.yitu2.demo.aop.GlobalLogInfo - ARGS : [admin, 123]
+[INFO ] 2019-04-08 17:56:31,854 com.yitu2.demo.controller.MainController - user adminlogin success
+[INFO ] 2019-04-08 17:56:31,855 com.yitu2.demo.shiro.UserRealm - 执行认证逻辑
+[DEBUG] 2019-04-08 17:56:31,975 com.yitu2.demo.dao.RealmDao.checkUsername - ==>  Preparing: SELECT count(id) FROM `admin` where username = ? 
+[DEBUG] 2019-04-08 17:56:31,994 com.yitu2.demo.dao.RealmDao.checkUsername - ==> Parameters: admin(String)
+[DEBUG] 2019-04-08 17:56:32,013 com.yitu2.demo.dao.RealmDao.checkUsername - <==      Total: 1
+[DEBUG] 2019-04-08 17:56:32,016 com.yitu2.demo.dao.RealmDao.getPasswordByUsername - ==>  Preparing: SELECT password FROM `admin` where username = ? 
+[DEBUG] 2019-04-08 17:56:32,016 com.yitu2.demo.dao.RealmDao.getPasswordByUsername - ==> Parameters: admin(String)
+[DEBUG] 2019-04-08 17:56:32,018 com.yitu2.demo.dao.RealmDao.getPasswordByUsername - <==      Total: 1
+[INFO ] 2019-04-08 17:56:32,068 com.yitu2.demo.shiro.UserRealm - 执行授权逻辑
+[DEBUG] 2019-04-08 17:56:32,072 com.yitu2.demo.dao.RealmDao.getPermByName - ==>  Preparing: SELECT perm FROM `admin` where username = ? 
+[DEBUG] 2019-04-08 17:56:32,073 com.yitu2.demo.dao.RealmDao.getPermByName - ==> Parameters: admin(String)
+[DEBUG] 2019-04-08 17:56:32,074 com.yitu2.demo.dao.RealmDao.getPermByName - <==      Total: 1
+[DEBUG] 2019-04-08 17:56:32,075 com.yitu2.demo.dao.RealmDao.getPermByName - ==>  Preparing: SELECT perm FROM `admin` where username = ? 
+[DEBUG] 2019-04-08 17:56:32,075 com.yitu2.demo.dao.RealmDao.getPermByName - ==> Parameters: admin(String)
+[DEBUG] 2019-04-08 17:56:32,075 com.yitu2.demo.dao.RealmDao.getPermByName - <==      Total: 1
+[INFO ] 2019-04-08 17:56:42,827 com.yitu2.demo.aop.GlobalLogInfo - URL : http://localhost:8082/logincheck
+[INFO ] 2019-04-08 17:56:42,827 com.yitu2.demo.aop.GlobalLogInfo - HTTP_METHOD : GET
+[INFO ] 2019-04-08 17:56:42,827 com.yitu2.demo.aop.GlobalLogInfo - IP : 0:0:0:0:0:0:0:1
+[INFO ] 2019-04-08 17:56:42,827 com.yitu2.demo.aop.GlobalLogInfo - CLASS_METHOD : com.yitu2.demo.controller.MainController.logincheck
+[INFO ] 2019-04-08 17:56:42,828 com.yitu2.demo.aop.GlobalLogInfo - ARGS : [nan, 123456]
+[INFO ] 2019-04-08 17:56:42,828 com.yitu2.demo.controller.MainController - user nanlogin success
+[INFO ] 2019-04-08 17:56:42,828 com.yitu2.demo.shiro.UserRealm - 执行认证逻辑
+[DEBUG] 2019-04-08 17:56:42,828 com.yitu2.demo.dao.RealmDao.checkUsername - ==>  Preparing: SELECT count(id) FROM `admin` where username = ? 
+[DEBUG] 2019-04-08 17:56:42,829 com.yitu2.demo.dao.RealmDao.checkUsername - ==> Parameters: nan(String)
+[DEBUG] 2019-04-08 17:56:42,830 com.yitu2.demo.dao.RealmDao.checkUsername - <==      Total: 1
+[DEBUG] 2019-04-08 17:56:42,832 com.yitu2.demo.dao.RealmDao.getPasswordByUsername - ==>  Preparing: SELECT password FROM `admin` where username = ? 
+[DEBUG] 2019-04-08 17:56:42,832 com.yitu2.demo.dao.RealmDao.getPasswordByUsername - ==> Parameters: nan(String)
+[DEBUG] 2019-04-08 17:56:42,833 com.yitu2.demo.dao.RealmDao.getPasswordByUsername - <==      Total: 1
+[INFO ] 2019-04-08 17:56:42,851 com.yitu2.demo.shiro.UserRealm - 执行授权逻辑
+[DEBUG] 2019-04-08 17:56:42,852 com.yitu2.demo.dao.RealmDao.getPermByName - ==>  Preparing: SELECT perm FROM `admin` where username = ? 
+[DEBUG] 2019-04-08 17:56:42,853 com.yitu2.demo.dao.RealmDao.getPermByName - ==> Parameters: nan(String)
+[DEBUG] 2019-04-08 17:56:42,853 com.yitu2.demo.dao.RealmDao.getPermByName - <==      Total: 1
+[DEBUG] 2019-04-08 17:56:42,854 com.yitu2.demo.dao.RealmDao.getPermByName - ==>  Preparing: SELECT perm FROM `admin` where username = ? 
+[DEBUG] 2019-04-08 17:56:42,854 com.yitu2.demo.dao.RealmDao.getPermByName - ==> Parameters: admin(String)
+[DEBUG] 2019-04-08 17:56:42,855 com.yitu2.demo.dao.RealmDao.getPermByName - <==      Total: 1

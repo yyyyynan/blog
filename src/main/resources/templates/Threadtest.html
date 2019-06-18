@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+</head>
+<body>
+
+<button onclick="begin()" value="">减一</button>
+<br>
+<button onclick="addth()" value="">添加</button>
+
+<script src="/JS/lib/jquery/jquery-1.8.0.min.js"></script>
+<script>
+
+    function begin() {
+        $.ajax({
+            type: "get",
+            url: "/selvaltest",
+            data: {},
+            dataType: "json",
+            // async: false,
+            success: function (data) {
+                console.log(data)
+            }
+        });
+
+    };
+    function addth() {
+        $.ajax({
+            type: "get",
+            url: "/addth",
+            data: {},
+            dataType: "json",
+            async: false,
+            success: function () {
+                console.log("添加成功")
+            }
+        });
+    }
+</script>
+</body>
+
+</html>

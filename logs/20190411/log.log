@@ -1,0 +1,93 @@
+[INFO ] 2019-04-11 11:58:10,961 com.yitu2.demo.DemoApplication - Starting DemoApplication on localhost with PID 16324 (D:\nan\maven\demo\target\classes started by Administrator in D:\nan\maven\demo)
+[DEBUG] 2019-04-11 11:58:10,968 com.yitu2.demo.DemoApplication - Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+[INFO ] 2019-04-11 11:58:10,969 com.yitu2.demo.DemoApplication - No active profile set, falling back to default profiles: default
+[DEBUG] 2019-04-11 11:58:12,792 com.yitu2.demo.redis.CacheConfig - 自定义RedisCacheManager加载完成
+[DEBUG] 2019-04-11 11:58:12,793 com.yitu2.demo.redis.CacheConfig - 自定义RedisTemplate加载完成
+[INFO ] 2019-04-11 11:58:13,268 com.yitu2.demo.DemoApplication - Started DemoApplication in 2.67 seconds (JVM running for 3.323)
+[INFO ] 2019-04-11 11:58:37,963 com.yitu2.demo.aop.GlobalLogInfo - URL : http://localhost:8082/listHomepageAD
+[INFO ] 2019-04-11 11:58:37,963 com.yitu2.demo.aop.GlobalLogInfo - HTTP_METHOD : GET
+[INFO ] 2019-04-11 11:58:37,963 com.yitu2.demo.aop.GlobalLogInfo - IP : 0:0:0:0:0:0:0:1
+[INFO ] 2019-04-11 11:58:37,964 com.yitu2.demo.aop.GlobalLogInfo - CLASS_METHOD : com.yitu2.demo.controller.MainController.listHomepageAD
+[INFO ] 2019-04-11 11:58:37,964 com.yitu2.demo.aop.GlobalLogInfo - ARGS : []
+[DEBUG] 2019-04-11 11:58:38,094 com.yitu2.demo.dao.MainDao.listHomepageAD - ==>  Preparing: SELECT id,photo,link FROM `homepage_ad` order by `homepage_ad`.order limit 0,9 
+[DEBUG] 2019-04-11 11:58:38,117 com.yitu2.demo.dao.MainDao.listHomepageAD - ==> Parameters: 
+[DEBUG] 2019-04-11 11:58:38,136 com.yitu2.demo.dao.MainDao.listHomepageAD - <==      Total: 3
+[INFO ] 2019-04-11 11:58:38,138 com.yitu2.demo.controller.MainController - listHomepageAD
+[INFO ] 2019-04-11 11:58:49,872 com.yitu2.demo.aop.GlobalLogInfo - URL : http://localhost:8082/logincheck
+[INFO ] 2019-04-11 11:58:49,872 com.yitu2.demo.aop.GlobalLogInfo - HTTP_METHOD : GET
+[INFO ] 2019-04-11 11:58:49,872 com.yitu2.demo.aop.GlobalLogInfo - IP : 0:0:0:0:0:0:0:1
+[INFO ] 2019-04-11 11:58:49,872 com.yitu2.demo.aop.GlobalLogInfo - CLASS_METHOD : com.yitu2.demo.controller.MainController.logincheck
+[INFO ] 2019-04-11 11:58:49,872 com.yitu2.demo.aop.GlobalLogInfo - ARGS : [admin, 123]
+[INFO ] 2019-04-11 11:58:49,873 com.yitu2.demo.controller.MainController - user adminlogin success
+[INFO ] 2019-04-11 11:58:49,873 com.yitu2.demo.shiro.UserRealm - 执行认证逻辑
+[DEBUG] 2019-04-11 11:58:49,875 com.yitu2.demo.dao.RealmDao.checkUsername - ==>  Preparing: SELECT count(id) FROM `admin` where username = ? 
+[DEBUG] 2019-04-11 11:58:49,875 com.yitu2.demo.dao.RealmDao.checkUsername - ==> Parameters: admin(String)
+[DEBUG] 2019-04-11 11:58:49,876 com.yitu2.demo.dao.RealmDao.checkUsername - <==      Total: 1
+[DEBUG] 2019-04-11 11:58:49,877 com.yitu2.demo.dao.RealmDao.getPasswordByUsername - ==>  Preparing: SELECT password FROM `admin` where username = ? 
+[DEBUG] 2019-04-11 11:58:49,877 com.yitu2.demo.dao.RealmDao.getPasswordByUsername - ==> Parameters: admin(String)
+[DEBUG] 2019-04-11 11:58:49,878 com.yitu2.demo.dao.RealmDao.getPasswordByUsername - <==      Total: 1
+[INFO ] 2019-04-11 11:58:59,936 com.yitu2.demo.aop.GlobalLogInfo - URL : http://localhost:8082/logincheck
+[INFO ] 2019-04-11 11:58:59,936 com.yitu2.demo.aop.GlobalLogInfo - HTTP_METHOD : GET
+[INFO ] 2019-04-11 11:58:59,936 com.yitu2.demo.aop.GlobalLogInfo - IP : 0:0:0:0:0:0:0:1
+[INFO ] 2019-04-11 11:58:59,936 com.yitu2.demo.aop.GlobalLogInfo - CLASS_METHOD : com.yitu2.demo.controller.MainController.logincheck
+[INFO ] 2019-04-11 11:58:59,936 com.yitu2.demo.aop.GlobalLogInfo - ARGS : [admin, 123231]
+[INFO ] 2019-04-11 11:58:59,936 com.yitu2.demo.controller.MainController - user adminlogin success
+[INFO ] 2019-04-11 11:58:59,936 com.yitu2.demo.shiro.UserRealm - 执行认证逻辑
+[DEBUG] 2019-04-11 11:58:59,937 com.yitu2.demo.dao.RealmDao.checkUsername - ==>  Preparing: SELECT count(id) FROM `admin` where username = ? 
+[DEBUG] 2019-04-11 11:58:59,937 com.yitu2.demo.dao.RealmDao.checkUsername - ==> Parameters: admin(String)
+[DEBUG] 2019-04-11 11:58:59,938 com.yitu2.demo.dao.RealmDao.checkUsername - <==      Total: 1
+[DEBUG] 2019-04-11 11:58:59,938 com.yitu2.demo.dao.RealmDao.getPasswordByUsername - ==>  Preparing: SELECT password FROM `admin` where username = ? 
+[DEBUG] 2019-04-11 11:58:59,938 com.yitu2.demo.dao.RealmDao.getPasswordByUsername - ==> Parameters: admin(String)
+[DEBUG] 2019-04-11 11:58:59,938 com.yitu2.demo.dao.RealmDao.getPasswordByUsername - <==      Total: 1
+[INFO ] 2019-04-11 11:59:04,319 com.yitu2.demo.aop.GlobalLogInfo - URL : http://localhost:8082/logincheck
+[INFO ] 2019-04-11 11:59:04,319 com.yitu2.demo.aop.GlobalLogInfo - HTTP_METHOD : GET
+[INFO ] 2019-04-11 11:59:04,319 com.yitu2.demo.aop.GlobalLogInfo - IP : 0:0:0:0:0:0:0:1
+[INFO ] 2019-04-11 11:59:04,319 com.yitu2.demo.aop.GlobalLogInfo - CLASS_METHOD : com.yitu2.demo.controller.MainController.logincheck
+[INFO ] 2019-04-11 11:59:04,319 com.yitu2.demo.aop.GlobalLogInfo - ARGS : [admindsfsdfg, 123231]
+[INFO ] 2019-04-11 11:59:04,319 com.yitu2.demo.controller.MainController - user admindsfsdfglogin success
+[INFO ] 2019-04-11 11:59:04,320 com.yitu2.demo.shiro.UserRealm - 执行认证逻辑
+[DEBUG] 2019-04-11 11:59:04,320 com.yitu2.demo.dao.RealmDao.checkUsername - ==>  Preparing: SELECT count(id) FROM `admin` where username = ? 
+[DEBUG] 2019-04-11 11:59:04,320 com.yitu2.demo.dao.RealmDao.checkUsername - ==> Parameters: admindsfsdfg(String)
+[DEBUG] 2019-04-11 11:59:04,321 com.yitu2.demo.dao.RealmDao.checkUsername - <==      Total: 1
+[DEBUG] 2019-04-11 11:59:04,322 com.yitu2.demo.dao.RealmDao.checkUsername - ==>  Preparing: SELECT count(id) FROM `admin` where username = ? 
+[DEBUG] 2019-04-11 11:59:04,322 com.yitu2.demo.dao.RealmDao.checkUsername - ==> Parameters: admindsfsdfg(String)
+[DEBUG] 2019-04-11 11:59:04,324 com.yitu2.demo.dao.RealmDao.checkUsername - <==      Total: 1
+[INFO ] 2019-04-11 11:59:19,568 com.yitu2.demo.aop.GlobalLogInfo - URL : http://localhost:8082/logincheck
+[INFO ] 2019-04-11 11:59:19,568 com.yitu2.demo.aop.GlobalLogInfo - HTTP_METHOD : GET
+[INFO ] 2019-04-11 11:59:19,568 com.yitu2.demo.aop.GlobalLogInfo - IP : 0:0:0:0:0:0:0:1
+[INFO ] 2019-04-11 11:59:19,568 com.yitu2.demo.aop.GlobalLogInfo - CLASS_METHOD : com.yitu2.demo.controller.MainController.logincheck
+[INFO ] 2019-04-11 11:59:19,569 com.yitu2.demo.aop.GlobalLogInfo - ARGS : [admindsfsdfg, 123231]
+[INFO ] 2019-04-11 11:59:19,569 com.yitu2.demo.controller.MainController - user admindsfsdfglogin success
+[INFO ] 2019-04-11 11:59:19,569 com.yitu2.demo.shiro.UserRealm - 执行认证逻辑
+[DEBUG] 2019-04-11 11:59:19,569 com.yitu2.demo.dao.RealmDao.checkUsername - ==>  Preparing: SELECT count(id) FROM `admin` where username = ? 
+[DEBUG] 2019-04-11 11:59:19,569 com.yitu2.demo.dao.RealmDao.checkUsername - ==> Parameters: admindsfsdfg(String)
+[DEBUG] 2019-04-11 11:59:19,570 com.yitu2.demo.dao.RealmDao.checkUsername - <==      Total: 1
+[DEBUG] 2019-04-11 11:59:19,570 com.yitu2.demo.dao.RealmDao.checkUsername - ==>  Preparing: SELECT count(id) FROM `admin` where username = ? 
+[DEBUG] 2019-04-11 11:59:19,570 com.yitu2.demo.dao.RealmDao.checkUsername - ==> Parameters: admindsfsdfg(String)
+[DEBUG] 2019-04-11 11:59:19,571 com.yitu2.demo.dao.RealmDao.checkUsername - <==      Total: 1
+[INFO ] 2019-04-11 11:59:21,851 com.yitu2.demo.aop.GlobalLogInfo - URL : http://localhost:8082/logincheck
+[INFO ] 2019-04-11 11:59:21,852 com.yitu2.demo.aop.GlobalLogInfo - HTTP_METHOD : GET
+[INFO ] 2019-04-11 11:59:21,852 com.yitu2.demo.aop.GlobalLogInfo - IP : 0:0:0:0:0:0:0:1
+[INFO ] 2019-04-11 11:59:21,852 com.yitu2.demo.aop.GlobalLogInfo - CLASS_METHOD : com.yitu2.demo.controller.MainController.logincheck
+[INFO ] 2019-04-11 11:59:21,852 com.yitu2.demo.aop.GlobalLogInfo - ARGS : [admindsfsdfg, 123231]
+[INFO ] 2019-04-11 11:59:21,852 com.yitu2.demo.controller.MainController - user admindsfsdfglogin success
+[INFO ] 2019-04-11 11:59:21,852 com.yitu2.demo.shiro.UserRealm - 执行认证逻辑
+[DEBUG] 2019-04-11 11:59:21,853 com.yitu2.demo.dao.RealmDao.checkUsername - ==>  Preparing: SELECT count(id) FROM `admin` where username = ? 
+[DEBUG] 2019-04-11 11:59:21,853 com.yitu2.demo.dao.RealmDao.checkUsername - ==> Parameters: admindsfsdfg(String)
+[DEBUG] 2019-04-11 11:59:21,854 com.yitu2.demo.dao.RealmDao.checkUsername - <==      Total: 1
+[DEBUG] 2019-04-11 11:59:21,855 com.yitu2.demo.dao.RealmDao.checkUsername - ==>  Preparing: SELECT count(id) FROM `admin` where username = ? 
+[DEBUG] 2019-04-11 11:59:21,855 com.yitu2.demo.dao.RealmDao.checkUsername - ==> Parameters: admindsfsdfg(String)
+[DEBUG] 2019-04-11 11:59:21,856 com.yitu2.demo.dao.RealmDao.checkUsername - <==      Total: 1
+[INFO ] 2019-04-11 15:23:38,493 com.yitu2.demo.aop.GlobalLogInfo - URL : http://localhost:8082/logincheck
+[INFO ] 2019-04-11 15:23:38,494 com.yitu2.demo.aop.GlobalLogInfo - HTTP_METHOD : GET
+[INFO ] 2019-04-11 15:23:38,495 com.yitu2.demo.aop.GlobalLogInfo - IP : 0:0:0:0:0:0:0:1
+[INFO ] 2019-04-11 15:23:38,495 com.yitu2.demo.aop.GlobalLogInfo - CLASS_METHOD : com.yitu2.demo.controller.MainController.logincheck
+[INFO ] 2019-04-11 15:23:38,495 com.yitu2.demo.aop.GlobalLogInfo - ARGS : [admindsfsdfg, 123231]
+[INFO ] 2019-04-11 15:23:38,495 com.yitu2.demo.controller.MainController - user admindsfsdfglogin success
+[INFO ] 2019-04-11 15:23:38,496 com.yitu2.demo.shiro.UserRealm - 执行认证逻辑
+[DEBUG] 2019-04-11 15:23:38,502 com.yitu2.demo.dao.RealmDao.checkUsername - ==>  Preparing: SELECT count(id) FROM `admin` where username = ? 
+[DEBUG] 2019-04-11 15:23:38,504 com.yitu2.demo.dao.RealmDao.checkUsername - ==> Parameters: admindsfsdfg(String)
+[DEBUG] 2019-04-11 15:23:38,508 com.yitu2.demo.dao.RealmDao.checkUsername - <==      Total: 1
+[DEBUG] 2019-04-11 15:23:38,509 com.yitu2.demo.dao.RealmDao.checkUsername - ==>  Preparing: SELECT count(id) FROM `admin` where username = ? 
+[DEBUG] 2019-04-11 15:23:38,510 com.yitu2.demo.dao.RealmDao.checkUsername - ==> Parameters: admindsfsdfg(String)
+[DEBUG] 2019-04-11 15:23:38,511 com.yitu2.demo.dao.RealmDao.checkUsername - <==      Total: 1
