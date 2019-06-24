@@ -79,4 +79,9 @@ public class MapController {
         return "/second/main";
     }
 
+    @RequestMapping("/comments")
+    public String comments(){
+        return "/second/comments";
+    }
+
 }

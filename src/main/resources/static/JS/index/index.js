@@ -3,228 +3,71 @@ $(function () {
 });
 
 /**
- * 前台首页部分内容一共有五个部分分别为
- * 首页广告         HomepageAD()
- * 首页同城活动     HomepageActivity()
- * 首页查攻略       HomepageRaiders()
- * 首页相册         HomepageAlbum()
- * 首页项目推荐     HomepageRecommend()
+ * 初始化函数 暂时的作用是 加载这是第几页
  */
 function index() {
-    $("#index").attr("css", "selected");
-    $("#main").empty();
-    // removeNavBarCss();
-    // pageFrame();
-
-    // addtest();
-    // var i = 0;
-    // while (i !== 100) {
-    //     i = progressBarTest();
-    //     sleep(1000);
-    // }
-
-    // HomepageAD();
-    // addtest();
-    // HomepageActivity();
-    // HomepageRaiders();
-    // HomepageAlbums();
+    var page = parseInt(GetQueryString("page"));
+    switch (page) {
+        case 1:
+        case 2:
+        case 3:
+            $($("#templatemo_menu a")[page]).click();
+            break;
+        default:
+            $($("#templatemo_menu a")[0]).click();
+    }
 }
 
 /**
- * 首页轮播广告
- * @constructor
+ * 这个是移除首页最上面的一条导航栏的样式的 点击导航列表中的任意一项都会触发
+ * 然后在其函数体内给其本体加上样式
  */
-function HomepageAD() {
-    $.ajax({
-        type: "get",
-        url: "/listHomepageAD",
-        data: {},
-        dataType: "json",
-        async: false,
-        success: function (data) {
-            // console.log(data);
-            if (data.status === "200") {
-                data = data.data;
-                for (var i in data) {
-                    demo = "<a target='blank' href='" + data[i].link + "' rel='1' style='display: none; z-index: 2;'>" +
-                        "<img width='960' height='320' src='" + data[i].photo + "' alt='第" + i + "张广告图'></a>";
-                    $("#bigAd").append(demo);
-                }
-            }
-            $("#bigAd").slideshow({
-                pauseSeconds: 4,
-                height: 320,
-                caption: false
-            });
-            if (data.status === "100") {
-                var demo = "<div>" + data.errorMsg +
-                    "</div>";
-                $("#main").append(demo);
-            }
-        }
-    });
+function removeListClass() {
+    $("#templatemo_menu a").removeClass();
 }
 
 /**
- * 首页同城活动
- * @constructor
+ * 页面跳转
+ * @param obj
  */
-function HomepageActivity() {
-    $.ajax({
-        type: "get",
-        url: "/listHomepageActivity",
-        data: {},
-        dataType: "json",
-        async: false,
-        success: function (data) {
-            // console.log(data);
-            if (data.status === "200") {
-                data = data.data;
-                var htmll = "<div id='quna'>" +
-                    "<div class='header_quna'>" +
-                    "<h2>同城活动" +
-                    "</h2>" +
-                    "</div>" +
-                    "<h4>" +
-                    "<span>" + "</span>" + "<a href='http://bbs.szhome.com/500-500100-detail-120213607.html' target='_blank' style='color:#000;'>" + data[0].title + "</a>" +
-                    "</h4>" +
-                    "<div class='detail_quna'>" +
-                    "<a href='" + data[0].link + "' target='_blank'>" + "<img width='150' height='90' src='" + data[0].img + "'>" + "</a>" + "<p>&nbsp;" +
-                    "<a class='apply' target='blank' href='" + data[0].link + "'>报名" + "</a>" + "</p>" +
-                    "</div>" +
-                    "</div>";
-                $("#container").append(htmll);
-            }
-            if (data.status === "100") {
-                var demo = "<div>" + data.errorMsg +
-                    "</div>";
-                $("#container").append(demo);
-            }
-        }
-    });
+function toUrl(obj,pageNum) {
+    if ($("#iframe1").attr("src").substr(2) != pageNum){
+        removeListClass();
+        $(obj).addClass("current");
+        $("#iframe1").attr("src", "./"+pageNum);
+        var url = window.location.href.split("?")[0];
+        window.history.replaceState({}, "", url + "?page="+distinguish(pageNum));
+    }
+}
+
+
+function distinguish(num) {
+    switch (num) {
+        case "main":
+            return 0;
+        case "notes":
+            return 1
+        case "comments":
+            return 2;
+        case "AboutMe":
+            return 3;
+        default:
+            return 0;
+    }
 }
 
 /**
- * 首页查攻略
- * @constructor
+ * 记录页跳转
+ * @param obj
  */
-function HomepageRaiders() {
-    $.ajax({
-        type: "get",
-        url: "/listHomepageRaiders",
-        data: {},
-        dataType: "json",
-        async: false,
-        success: function (data) {
-            // console.log(data);
-            if (data.status === "200") {
-                data = data.data;
-                var htmll = " <div id='gonglie'><h2>" +
-                    "<a target='_blank' href='http://bbs.szhome.com/340010.html'>查攻略</a></h2>" +
-                    "<ul>";
-                for (var i in data) {
-                    htmll += "<li><span>" + data[i].addr + "</span><a target='_blank' title='" + data[i].title + "' href='" + data[i].link + "'>" +
-                        data[i].title + "</a></li>";
-                }
-                htmll += "</ul>" +
-                    "</div>";
-                $("#container").append(htmll);
-            }
-            if (data.status === "100") {
-                var demo = "<div>" + data.errorMsg +
-                    "</div>";
-                $("#container").append(demo);
-            }
-        }
-    });
-}
+// function toNotes(obj) {
+//     removeListClass();
+//     $(obj).addClass("current");
+//     $("#iframe1").attr("src", "./notes");
+//     var url = window.location.href.split("?")[0];
+//     window.history.replaceState({}, "", url + "?page=1");
+// }
 
-/**
- * 首页翻相册部分
- * @constructor
- */
-function HomepageAlbums() {
-    $.ajax({
-        type: "get",
-        url: "/listHomepageAlbums",
-        data: {},
-        dataType: "json",
-        async: false,
-        success: function (data) {
-            console.log(data);
-            if (data.status === "200") {
-                data = data.data;
-                var htmll = " <div id='gonglie'><h2>" +
-                    "<a target='_blank' href='http://bbs.szhome.com/340010.html'>查攻略</a></h2>" +
-                    "<ul>";
-                for (var i in data) {
-                    htmll += "<li><span>" + data[i].addr + "</span><a target='_blank' title='" + data[i].title + "' href='" + data[i].link + "'>" +
-                        data[i].title + "</a></li>";
-                }
-                htmll += "</ul>" +
-                    "</div>";
-                $("#container").append(htmll);
-            }
-        }
-    });
-}
-
-/**
- * 添加尝试
- * @constructor
- */
-function addtest() {
-    $.ajax({
-        type: "get",
-        url: "/addtest",
-        data: {},
-        dataType: "json",
-        async: true,
-        success: function (data) {
-            console.log(data);
-        }
-    });
-}
-
-/**
- * 消除首页导航栏样式
- */
-function removeNavBarCss() {
-    $("#index").attr("css", "");
-    $("#player").attr("css", "");
-    $("#sel").attr("css", "");
-    $("#photo").attr("css", "");
-}
-
-/**
- * 这部分代码是添加页面框架用的
- */
-function pageFrame() {
-    var demo = "<div id = 'bigAd' class = slideshowlite' style = 'width=960 px; height=320 px;'>" +
-        "</div>";
-    $("#main").append(demo);
-    demo = "<div id='container'></div>";
-    $("#main").append(demo);
-}
-
-/**
- * 进度条测试
- */
-function progressBarTest() {
-    var d = 0;
-    $.ajax({
-        type: "get",
-        url: "/getProgress",
-        data: {},
-        dataType: "json",
-        async: false,
-        success: function (data) {
-            console.log(data);
-            d = data;
-        }
-    });
-    return d;
-}
 
 /**
  * 获取地址栏参数函数
@@ -233,10 +76,10 @@ function progressBarTest() {
  * @constructor
  */
 function GetQueryString(name) {
-    var reg = newRegExp("(^|\&)" + name + "=([^\&]*)(\&|$)");
+    var reg = new RegExp("(^|\&)" + name + "=([^\&]*)(\&|$)");
     var r = window.location.search.substr(1).match(reg);
-    if (r != null) returndecodeURI(r[2]);
-    returnnull;
+    if (r != null) return decodeURI(r[2]);
+    return null;
 }
 
 /**

@@ -10,7 +10,7 @@
         }
     </style>
 </head>
-<body>
+<body onselectstart="return false">
 <div id="templatemo_header">
 
     <div id="site_title">
@@ -42,10 +42,10 @@
 
     <div id="templatemo_menu">
         <ul>
-            <li><a href="./" class="current"><span></span>首页</a></li>
-            <li><a href="./notes"><span></span>日记/周记/月记</a></li>
-            <li><a href="#"><span></span>留言板</a></li>
-            <li><a href="#"><span></span>关于我</a></li>
+            <li><a class="current" onclick="toUrl(this,'main')"><span></span>首页</a></li>
+            <li><a onclick="toUrl(this,'notes')"><span></span>日记/周记/月记</a></li>
+            <li><a onclick="toUrl(this,'comments')"><span></span>留言板</a></li>
+            <li><a><span></span>关于我</a></li>
             <!--<li><a href="#"><span></span>Inspirations</a></li>-->
             <!--<li><a href="#"><span></span>Flash Files</a></li>-->
         </ul>
@@ -57,33 +57,8 @@
 
     <div id="templatemo_content">
 
-        <!--<iframe src="/main" id="iframe1" style="border: none;width: 50%;height: 100%;float: left" ></iframe>-->
-        <div class="content_box">
-
-            <h1> 黑铁选手 <span>在此！</span></h1>
-            <p>2019年的某一天，或者说某一段时间，我准备毕业了，开始面对生活的压力。只见我二话不说冲上去对着租房就是一锤子，好家伙，直接一锤子把我天灵盖打翻了。</p><br>
-            <p>被生活暴打一顿的我倒不至于放弃，但是开始静下心来寻思着如何活下去，并把自己的进步记录下来，这才是我现在要做的。</p>
-        </div>
-
-        <div class="post_box">
-            <div class="header">
-                <h2><a href="#">Cum sociis natoque penatibus et magnis</a></h2>
-                <div class="tag"><strong>Tags:</strong> <a href="#">Photography</a>, <a href="#">Free Photos</a>, <a
-                        href="#">HDR</a></div>
-                <span class="posted_date">
-                    25 Feb
-                    <strong>2010</strong>
-                </span>
-            </div>
-            <img src="images/templatemo_image_01.jpg" alt="image"/>
-            <div class="pb_right">
-                <p>Praesent mattis varius quam. Vestibulum ullamcorper ipsum nec augue. Vestibulum auctor odio eget
-                    ante. Nunc commodo, magna pharetra semper vehicula, dui ligula feugiat elit, et euismod nunc orci ut
-                    libero. Etiam sodales massa vel metus. Mauris et elit quis mauris aliquet luctus.</p>
-                <div class="comment"><a href="#">Comment</a></div>
-            </div>
-        </div>
-        <div class="cleaner"></div>
+        <iframe src="" id="iframe1" scrolling="auto" frameborder="0"
+                allowTransparency="true"></iframe>
 
     </div>
 
