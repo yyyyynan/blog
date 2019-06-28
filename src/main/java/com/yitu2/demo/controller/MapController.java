@@ -84,4 +84,9 @@ public class MapController {
         return "/second/comments";
     }
 
+    @RequestMapping("/AboutMe")
+    public String AboutMe(){
+        return "/second/AboutMe";
+    }
+
 }

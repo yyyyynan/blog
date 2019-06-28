@@ -117,6 +117,10 @@ h6 {
     font-size: 0px;
 }
 
+.table_1{
+    width: 100%;
+}
+
 .cleaner_h10 {
     clear: both;
     width: 100%;
@@ -216,7 +220,7 @@ a.continue {
 
 #iframe1 {
     border: none;
-    width: 100%;
+    width: 100% ;
     height: 100%;
     float: left;
     overflow-y: hidden;
@@ -469,19 +473,27 @@ a.continue {
     height: 108px;
     border: 5px solid #fff;
     float: left;
-    margin-right: 30px;
+    /*margin-right: 30px;*/
+}
+
+.leftclass1{
+    margin-right: 140px;
 }
 
 .post_box .pb_right {
     float: right;
-    width: 450px;
+    width: 75%;
 }
 
 .post_box .comment a {
     display: block;
-    margin-top: 15px;
+    width: 52px;
+    margin-top: 80px;
+    /*position:fixed;*/
+    /*bottom:0;*/
     background: url(../images/templatemo_comment.jpg) no-repeat bottom left;
     padding: 3px 0 0 25px;
+
 }
 
 #templatemo_sidebar {
